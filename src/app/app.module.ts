@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { RouterModule } from '@angular/router';
@@ -19,10 +19,14 @@ import { MatRippleModule, MatNativeDateModule } from '@angular/material/core';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoadingService } from './shared/services/loading.service';
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     AddContactComponent,
     ContactCardComponent,
     UpdateContactComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +56,12 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     MatRippleModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [
+    LoadingService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
