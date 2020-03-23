@@ -14,12 +14,12 @@
     <mat-card-subtitle>{{ contact.email }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <p>{{ contact.firstName }} was born on {{ contact.dateOfBirth }}.</p>
+    <p>{{ contact.firstName }} was born {{ contact.dateOfBirth | timeago}}.</p>
     <div class="contact-modified-info">
-      Created on: {{ contact.insertedUtc }}
+      <strong>Created:</strong> {{ contact.insertedUtc | timeago }}
     </div>
     <div class="contact-modified-info">
-      Last updated: {{ contact.updatedUtc }}
+      <strong>Last updated:</strong> {{ contact.updatedUtc | timeago}}
     </div>
   </mat-card-content>
 </mat-card>

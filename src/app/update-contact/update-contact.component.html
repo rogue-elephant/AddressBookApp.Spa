@@ -2,6 +2,7 @@
   <h1>Update {{ contact.firstName }} {{ contact.surname }}</h1>
 
   <app-contact-form
+    [isUpdate]="true"
     [contact]="contact"
     (submitFormEvent)="submitFormHandler($event)"
   ></app-contact-form>

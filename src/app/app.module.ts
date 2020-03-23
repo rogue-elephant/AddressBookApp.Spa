@@ -18,8 +18,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule, MatNativeDateModule } from '@angular/material/core';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
@@ -57,10 +58,12 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    TimeagoModule.forRoot()
   ],
   providers: [
     LoadingService,
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

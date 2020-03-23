@@ -1,7 +1,8 @@
 <form class="add-contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
-  <mat-form-field appearance="fill">
+  <mat-form-field *ngIf="!isUpdate" appearance="fill">
     <mat-label>Enter your email</mat-label>
     <input matInput placeholder="foo@bar.com" [formControlName]="'email'" required>
+    <mat-error *ngIf="contactForm.touched && contactForm.invalid && contactForm.getError('email')">{{contactForm.getError('email')}}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
