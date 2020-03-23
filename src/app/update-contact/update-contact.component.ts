@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../shared/services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { IContact } from '../shared/models/IContact';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-update-contact',
@@ -10,14 +11,13 @@ import { IContact } from '../shared/models/IContact';
   styleUrls: ['./update-contact.component.scss']
 })
 export class UpdateContactComponent implements OnInit {
-  @Input()
-  contact: IContact;
+  public contact$: Observable<IContact>;
 
-  loaded = false;
-
-  constructor(private api: ApiService, private snackbar: MatSnackBar, private router: Router) {
-    this.contact = this.contact ? this.contact : (this.router.getCurrentNavigation().extras.state.contact as IContact);
-    if(this.contact) this.loaded = true;
+  constructor(private api: ApiService, private snackbar: MatSnackBar, private router: Router, private route: ActivatedRoute) {
+    this.route.paramMap.subscribe(paramMap => {
+      const email: string = paramMap.get('email');
+      this.contact$ = this.api.getContact(email);
+    });
   }
 
   ngOnInit(): void {

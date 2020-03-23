@@ -11,10 +11,9 @@
     fxFlex="25%"
     fxFlex.xs="100%"
     fxFlex.sm="100%"
-    *ngFor="let contact of contacts | async"
+    *ngFor="let contact of contacts$ | async"
     [contact]="contact"
-    routerLink="/update-contact"
-    [state]="{contact: contact}"
+    routerLink="/update-contact/{{contact.email}}"
   >
   </app-contact-card>
 </div>

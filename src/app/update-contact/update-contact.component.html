@@ -1,4 +1,4 @@
-<div *ngIf="loaded">
+<div *ngIf="contact$ | async as contact">
   <h1>Update {{ contact.firstName }} {{ contact.surname }}</h1>
 
   <app-contact-form

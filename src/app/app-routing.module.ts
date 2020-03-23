@@ -19,9 +19,8 @@ const routes: Routes = [
     component: AddContactComponent
   },
   {
-    path: 'update-contact',
-    component: UpdateContactComponent,
-    data: {contact: null}
+    path: 'update-contact/:email',
+    component: UpdateContactComponent
   }
 ];
 

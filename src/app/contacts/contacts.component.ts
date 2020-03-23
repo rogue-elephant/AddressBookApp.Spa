@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-  public contacts : Observable<IContact[]>
+  public contacts$ : Observable<IContact[]>
 
   constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
-    this.contacts = this.api.getContacts();
+    this.contacts$ = this.api.getContacts();
   }
 
   openUpdatePage(contact: IContact) {
