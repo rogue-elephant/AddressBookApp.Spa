@@ -1,0 +1,27 @@
+@import '../../styles';
+
+.contact-card {
+  height: 135px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 3px solid $primary-color;
+  box-shadow: 0px 5px 8px rgba(0,0,0,0.2);
+  margin-bottom: $default-spacing;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 7px 8px rgba(0,0,0,0.5);
+  }
+
+  .contact-card-avatar-container {
+    border: 1px solid #c3c3c3;
+    padding: 2px;
+
+    .contact-card-avatar {
+      font-size: 40px;
+    }
+  }
+
+  .contact-modified-info {
+    font-size: 0.8rem;
+  }
+}

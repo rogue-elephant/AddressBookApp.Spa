@@ -1,8 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+<mat-toolbar color="primary" id="app-toolbar">
+  <span id="app-title" [innerText]="title"></span>
 
-<button routerLink="/contacts">Contacts</button>
-<button routerLink="/add-contact">Add a Contact</button>
+  <div id="app-links" fxHide.lt-md>
+    <a routerLink="/contacts" [routerLinkActive]="'active'">Contacts</a>
+    <a routerLink="/add-contact" [routerLinkActive]="'active'">Add a Contact</a>
+  </div>
 
-<router-outlet></router-outlet>
+  <button mat-button fxHide="false" fxHide.gt-sm id="nav-hamburger">
+    <mat-icon>menu</mat-icon>
+   </button>
+</mat-toolbar>
+
+<div id="app-main">
+  <router-outlet></router-outlet>
+</div>
