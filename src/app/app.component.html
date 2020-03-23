@@ -1,11 +1,15 @@
 <mat-toolbar color="primary" id="app-toolbar">
-  <h1 id="app-title" [innerText]="title"></h1>
-</mat-toolbar>
+  <span id="app-title" [innerText]="title"></span>
 
-<div id="app-links">
-  <a routerLink="/contacts">Contacts</a>
-  <a routerLink="/add-contact">Add a Contact</a>
-</div>
+  <div id="app-links" fxHide.lt-md>
+    <a routerLink="/contacts" [routerLinkActive]="'active'">Contacts</a>
+    <a routerLink="/add-contact" [routerLinkActive]="'active'">Add a Contact</a>
+  </div>
+
+  <button mat-button fxHide="false" fxHide.gt-sm id="nav-hamburger">
+    <mat-icon>menu</mat-icon>
+   </button>
+</mat-toolbar>
 
 <div id="app-main">
   <router-outlet></router-outlet>
