@@ -1,7 +1,20 @@
 <h1>Contact List</h1>
 
-<div *ngFor="let contact of contacts | async" class="contact">
-    <h2>{{ contact.firstName }} {{ contact.lastName }}</h2>
-    <span>{{ contact.dateOfBirth }}</span>
-    <span>{{ contact.email }}</span>
+<div
+  fxLayout
+  fxLayout.xs="column"
+  fxLayoutAlign="start"
+  fxLayoutGap="16px"
+  fxLayoutGap.sm="8px"
+>
+  <app-contact-card
+    fxFlex="25%"
+    fxFlex.xs="100%"
+    fxFlex.sm="100%"
+    *ngFor="let contact of contacts | async"
+    [contact]="contact"
+    matRipple
+    routerLink="/add-contact"
+  >
+  </app-contact-card>
 </div>

@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+$default-background-color: #fff;
+$default-font-color: #303030;
+$default-spacing: 12px;
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: $default-background-color;
+  color: $default-font-color;
+
+  #app-main {
+    padding: $default-spacing;
+  }
+}
+

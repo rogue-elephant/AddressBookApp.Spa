@@ -1,0 +1,29 @@
+<h1>Add a contact</h1>
+
+<form class="add-contact-form" [formGroup]="addContactForm" (ngSubmit)="onSubmit(addContactForm.value)">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="foo@bar.com" [formControlName]="'email'" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your first name</mat-label>
+    <input matInput placeholder="John" [formControlName]="'firstName'" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your surname</mat-label>
+    <input matInput placeholder="Smith" [formControlName]="'surname'" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your date of birth</mat-label>
+    <input matInput [matDatepicker]="dob" placeholder="01/01/1970" [formControlName]="'dateOfBirth'" [max]="maxDobDate" required>
+    <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+    <mat-datepicker #dob></mat-datepicker>
+  </mat-form-field>
+
+  <!-- <mat-error *ngIf="addContactForm.touched && addContactForm.invalid">One or more errors in form.</mat-error> -->
+
+  <button type="submit" mat-button color="primary" [disabled]="!addContactForm.valid">Add Contact</button>
+</form>

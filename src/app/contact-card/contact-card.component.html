@@ -1,0 +1,25 @@
+<mat-card class="contact-card">
+  <mat-card-header>
+    <div mat-card-avatar class="contact-card-avatar-container">
+      <mat-icon
+        aria-hidden="false"
+        class="contact-card-avatar"
+        aria-label="Contact avatar"
+        >face</mat-icon
+      >
+    </div>
+    <mat-card-title
+      >{{ contact.firstName }} {{ contact.lastName }}</mat-card-title
+    >
+    <mat-card-subtitle>{{ contact.email }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ contact.firstName }} was born on {{ contact.dateOfBirth }}.</p>
+    <div class="contact-modified-info">
+      Created on: {{ contact.insertedUtc }}
+    </div>
+    <div class="contact-modified-info">
+      Last updated: {{ contact.updatedUtc }}
+    </div>
+  </mat-card-content>
+</mat-card>

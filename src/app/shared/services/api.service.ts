@@ -12,7 +12,14 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private formatContact = (contact: IContact) => ({...contact, dateOfBirth: new Date(contact.dateOfBirth).toLocaleDateString()});
+  private formateDate = (datetime: string) => new Date(datetime).toLocaleDateString();
+  private formatContact = (contact: IContact) => {
+    var updatedContact: IContact = {...contact,
+    dateOfBirth: this.formateDate(contact.dateOfBirth),
+    insertedUtc: this.formateDate(contact.insertedUtc),
+    updatedUtc: this.formateDate(contact.updatedUtc)};
+    return updatedContact;
+  };
 
   public getContacts() : Observable<IContact[]> {
     return this.httpClient.get(`${this.apiBaseUrl}contacts`)
@@ -23,6 +30,13 @@ export class ApiService {
 
   public getContact(email: string) : Observable<IContact> {
     return this.httpClient.get(`${this.apiBaseUrl}contacts/${email}`)
+      .pipe(
+        map((contact: IContact) => this.formatContact(contact))
+      );
+  }
+
+  public addContact(contact: IContact) : Observable<IContact> {
+    return this.httpClient.post(`${this.apiBaseUrl}contacts`, contact)
       .pipe(
         map((contact: IContact) => this.formatContact(contact))
       );

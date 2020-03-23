@@ -1,8 +1,12 @@
-<h1>
-  {{title}}
-</h1>
+<mat-toolbar color="primary">
+  <h1 style="font-family: 'Nunito', sans-serif;" [innerText]="title"></h1>
+</mat-toolbar>
 
-<button routerLink="/contacts">Contacts</button>
-<button routerLink="/add-contact">Add a Contact</button>
+<div id="app-links">
+  <span routerLink="/contacts">Contacts</span>
+  <span routerLink="/add-contact">Add a Contact</span>
+</div>
 
-<router-outlet></router-outlet>
+<div id="app-main">
+  <router-outlet></router-outlet>
+</div>
