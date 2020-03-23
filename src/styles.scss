@@ -1,13 +1,15 @@
-$default-background-color: #fff;
-$default-font-color: #303030;
+@import '~@angular/material/theming';
 $default-spacing: 12px;
+$primary-color: mat-color(mat-palette($mat-deep-purple));
 
 html, body { height: 100%; }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: $default-background-color;
-  color: $default-font-color;
+
+  * {
+    outline: none;
+  }
 
   #app-main {
     padding: $default-spacing;

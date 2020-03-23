@@ -41,4 +41,11 @@ export class ApiService {
         map((contact: IContact) => this.formatContact(contact))
       );
   }
+
+  public updateContact(contact: IContact) : Observable<IContact> {
+    return this.httpClient.put(`${this.apiBaseUrl}contacts/${contact.email}`, contact)
+      .pipe(
+        map((contact: IContact) => this.formatContact(contact))
+      );
+  }
 }

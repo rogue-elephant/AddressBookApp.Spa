@@ -13,8 +13,8 @@
     fxFlex.sm="100%"
     *ngFor="let contact of contacts | async"
     [contact]="contact"
-    matRipple
-    routerLink="/add-contact"
+    routerLink="/update-contact"
+    [state]="{contact: contact}"
   >
   </app-contact-card>
 </div>

@@ -18,14 +18,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule, MatNativeDateModule } from '@angular/material/core';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { ContactCardComponent } from './contact-card/contact-card.component';
+import { UpdateContactComponent } from './update-contact/update-contact.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
     AddContactComponent,
-    ContactCardComponent
+    ContactCardComponent,
+    UpdateContactComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,8 @@ import { ContactCardComponent } from './contact-card/contact-card.component';
     MatButtonModule,
     MatRippleModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

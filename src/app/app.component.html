@@ -1,10 +1,10 @@
-<mat-toolbar color="primary">
-  <h1 style="font-family: 'Nunito', sans-serif;" [innerText]="title"></h1>
+<mat-toolbar color="primary" id="app-toolbar">
+  <h1 id="app-title" [innerText]="title"></h1>
 </mat-toolbar>
 
 <div id="app-links">
-  <span routerLink="/contacts">Contacts</span>
-  <span routerLink="/add-contact">Add a Contact</span>
+  <a routerLink="/contacts">Contacts</a>
+  <a routerLink="/add-contact">Add a Contact</a>
 </div>
 
 <div id="app-main">
