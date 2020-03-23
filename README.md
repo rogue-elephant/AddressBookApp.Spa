@@ -8,6 +8,8 @@ You can clone the repo and run the Api project or you can run the api direct fro
 
 Once this is up you should be able to `npm install` and `ng serve` this app and it should connect.
 
+![Demo](docker-api-run-local.gif)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
 ## Development server
