@@ -1,5 +1,13 @@
 # AddressBookAppSpa
 
+## Running the app
+The app requires the [Address Book App Api](https://github.com/rogue-elephant/AddressBookApp.Api) web api to be running on port 5000.
+You can clone the repo and run the Api project or you can run the api direct from docker via:
+
+`docker run --rm -it  -p 5000:5000/tcp rogueelephant/address-book-app-api:latest`
+
+Once this is up you should be able to `npm install` and `ng serve` this app and it should connect.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
 ## Development server

@@ -1,6 +1,6 @@
 <h1>Contact List</h1>
 
-<div *ngIf="contacts$" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="16px">
+<div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="16px">
   <app-contact-card
     fxFlex.gt-md="0 1 calc(25% - 16px)"
     fxFlex.lt-lg="0 1 calc(50% - 16px)"
@@ -11,6 +11,6 @@
   >
   </app-contact-card>
 </div>
-<p *ngIf="!contacts$">
+<p *ngIf="(contacts$ | async)?.length==0">
   It's looking lonely in here... try <a routerLink="/add-contact">adding a new contact</a>
 </p>

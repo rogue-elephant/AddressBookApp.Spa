@@ -10,6 +10,9 @@ import { IContact } from '../shared/models/IContact';
 })
 export class ContactFormComponent implements OnInit {
   @Input()
+  isUpdate = false;
+
+  @Input()
   public contact: IContact = {
     firstName:'',
     surname: '',
@@ -36,8 +39,8 @@ export class ContactFormComponent implements OnInit {
     this.contactForm = this.formBuilder.group({
       firstName: [this.contact.firstName, [Validators.required, Validators.maxLength(100)]],
       surname: [this.contact.surname, [Validators.required, Validators.maxLength(100)]],
-      email: [this.contact.email, [Validators.required, Validators.email]],
-      dateOfBirth: [new Date(this.contact.dateOfBirth), [Validators.required, dobValidator]]
+      email: [this.contact.email, this.isUpdate ? [] : [Validators.required, Validators.email]],
+      dateOfBirth: [this.contact.dateOfBirth ? new Date(this.contact.dateOfBirth) : '', [Validators.required, dobValidator]]
     });
   }
 

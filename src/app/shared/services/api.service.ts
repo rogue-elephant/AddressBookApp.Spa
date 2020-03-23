@@ -12,7 +12,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private formateDate = (datetime: string) => new Date(datetime).toLocaleDateString();
+  private formateDate = (datetime: string) => new Date(datetime).toString();
   private formatContact = (contact: IContact) => {
     var updatedContact: IContact = {...contact,
     dateOfBirth: this.formateDate(contact.dateOfBirth),
