@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -47,6 +49,8 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
     MatCardModule,
     MatIconModule,
     FormsModule,

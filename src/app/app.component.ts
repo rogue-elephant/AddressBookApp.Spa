@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Address Book';
+  public title = 'Address Book';
+  public sideNavOpen = false;
+
+  public toggleSideNav = () => this.sideNavOpen = !this.sideNavOpen;
 }
