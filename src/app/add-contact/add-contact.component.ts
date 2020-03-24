@@ -3,7 +3,7 @@ import { FormControl, Validators, FormBuilder, FormGroup, ValidatorFn } from '@a
 import { IContact } from '../shared/models/IContact';
 import { ApiService } from '../shared/services/api.service';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { NotificationsService } from '../shared/services/notifications.service';
 
 @Component({
   selector: 'app-add-contact',
@@ -11,14 +11,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./add-contact.component.scss']
 })
 export class AddContactComponent implements OnInit {
-  constructor(private api: ApiService, private snackbar: MatSnackBar, private router: Router) {}
+  constructor(private api: ApiService, private notificationService: NotificationsService, private router: Router) {}
 
   ngOnInit(): void {
   }
 
   public submitFormHandler(contactInfo: IContact) {
     this.api.addContact(contactInfo).subscribe(result => {
-      this.snackbar.open(`Contact ${contactInfo.firstName} ${contactInfo.surname} created successfully!`);
+      this.notificationService.showNotification('Success', `Contact ${contactInfo.firstName} ${contactInfo.surname} created successfully!`, 'success');
       this.router.navigate(['/contacts']);
     });
   }
