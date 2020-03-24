@@ -1,5 +1,5 @@
 <div *ngIf="contact$ | async as contact">
-  <h1>Update {{ contact.firstName }} {{ contact.surname }}</h1>
+  <h1>Update {{ contact.email }}</h1>
 
   <app-contact-form
     [isUpdate]="true"

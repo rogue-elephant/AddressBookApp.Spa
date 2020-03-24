@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactFormComponent } from './contact-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { ApiService } from '../shared/services/api.service';
 
 describe('ContactFormComponent', () => {
   let component: ContactFormComponent;
@@ -8,7 +11,8 @@ describe('ContactFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactFormComponent ]
+      declarations: [ ContactFormComponent ],
+      imports: [BrowserModule, FormsModule, ReactiveFormsModule]
     })
     .compileComponents();
   }));

@@ -18,14 +18,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule, MatNativeDateModule } from '@angular/material/core';
-import { AddContactComponent } from './add-contact/add-contact.component';
+import { AddContactComponent } from './pages/add-contact/add-contact.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TimeagoModule } from 'ngx-timeago';
 
 import { ContactCardComponent } from './contact-card/contact-card.component';
-import { UpdateContactComponent } from './update-contact/update-contact.component';
+import { UpdateContactComponent } from './pages/update-contact/update-contact.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { LoadingService } from './shared/services/loading.service';

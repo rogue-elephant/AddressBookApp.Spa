@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApiService } from '../shared/services/api.service';
+import { ApiService } from '../../shared/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { IContact } from '../shared/models/IContact';
+import { IContact } from '../../shared/models/IContact';
 import { Observable } from 'rxjs';
-import { NotificationsService } from '../shared/services/notifications.service';
+import { NotificationsService } from '../../shared/services/notifications.service';
 
 @Component({
   selector: 'app-update-contact',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder, FormGroup, ValidatorFn } from '@angular/forms';
-import { IContact } from '../shared/models/IContact';
-import { ApiService } from '../shared/services/api.service';
+import { IContact } from '../../shared/models/IContact';
+import { ApiService } from '../../shared/services/api.service';
 import { Router } from '@angular/router';
-import { NotificationsService } from '../shared/services/notifications.service';
+import { NotificationsService } from '../../shared/services/notifications.service';
 
 @Component({
   selector: 'app-add-contact',
