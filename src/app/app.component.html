@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" id="app-toolbar">
-  <span id="app-title" [innerText]="title"></span>
+  <span id="app-title" [innerText]="title" routerLink='/'></span>
 
   <div id="app-links" fxHide.lt-md>
     <a routerLink="/contacts" [routerLinkActive]="'active'">Contacts</a>
@@ -13,7 +13,7 @@
 
 <mat-sidenav-container id="app-page-container">
   <mat-sidenav id="app-side-nav" #drawer mode="side" [(opened)]="sideNavOpen" role="navigation" fxHide.gt-sm>
-    <mat-nav-list>
+    <mat-nav-list (click)="toggleSideNav()">
       <a mat-list-item [routerLinkActive]="'active'" routerLink='/contacts'>Contacts</a>
       <a mat-list-item [routerLinkActive]="'active'" routerLink='/add-contact'>Add a Contact</a>
     </mat-nav-list>

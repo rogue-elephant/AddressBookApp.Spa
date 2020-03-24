@@ -1,5 +1,5 @@
 # AddressBookAppSpa
-
+![Preview Image](preview.png)
 ## Running the app
 The app requires the [Address Book App Api](https://github.com/rogue-elephant/AddressBookApp.Api) web api to be running on port 5000.
 You can clone the repo and run the Api project or you can run the api direct from docker via:
