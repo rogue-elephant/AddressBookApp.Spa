@@ -27,9 +27,11 @@ import { TimeagoModule } from 'ngx-timeago';
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { LoaderComponent } from './loader/loader.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 import { LoadingService } from './shared/services/loading.service';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { ApiErrorInterceptor } from './shared/interceptors/api-error.interceptor';
+import { NotificationsService } from './shared/services/notifications.service';
 
 @NgModule({
   declarations: [
@@ -67,8 +69,10 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
   ],
   providers: [
     LoadingService,
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }],
+    NotificationsService,
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 4500}},
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ApiErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
