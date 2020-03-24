@@ -8,7 +8,7 @@ import { IContact } from '../shared/models/IContact';
 })
 export class ContactCardComponent implements OnInit {
   @Input()
-  contact: IContact
+  contact: IContact;
 
   constructor() { }
 

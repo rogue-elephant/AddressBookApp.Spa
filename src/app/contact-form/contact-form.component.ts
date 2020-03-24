@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { ApiService } from '../shared/services/api.service';
 import { IContact } from '../shared/models/IContact';
 
 @Component({
@@ -28,7 +27,7 @@ export class ContactFormComponent implements OnInit {
   public contactForm: FormGroup;
   public maxDobDate: Date;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {
+  constructor(private formBuilder: FormBuilder) {
    }
 
   ngOnInit(): void {
