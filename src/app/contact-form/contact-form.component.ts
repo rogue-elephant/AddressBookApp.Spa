@@ -12,14 +12,7 @@ export class ContactFormComponent implements OnInit {
   isUpdate = false;
 
   @Input()
-  public contact: IContact = {
-    firstName:'',
-    surname: '',
-    email: '',
-    dateOfBirth: '',
-    insertedUtc: '',
-    updatedUtc: ''
-  };
+  public contact: IContact;
 
   @Output()
   public submitFormEvent: EventEmitter<IContact> = new EventEmitter<IContact>();
@@ -31,6 +24,16 @@ export class ContactFormComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    if(!this.contact)
+      this.contact = {
+        firstName:'',
+        surname: '',
+        email: '',
+        dateOfBirth: '',
+        insertedUtc: '',
+        updatedUtc: ''
+      };
+
     this.maxDobDate = new Date();
     const dobValidator = (control: FormControl): {[key: string]: any} =>
       new Date(Date.parse(control.value)) > this.maxDobDate ? { invalidDateOfBirth: true } : null;
